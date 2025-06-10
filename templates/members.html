@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Library Management System</title>
+</head>
+<body>
+    <nav class="navbar bg-dark navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collpase navbar-collapse" id="navbarTogglerDemo01">
+                <a href="#" class="navbar-brand">Library</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/">Home</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a href="/manageMembers" class="nav-link active" aria-current="page"> Manage Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/manageTransactions" class="nav-link">Manage Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/manageStaff" class="nav-link">Manage Staff</a>
+                    </li>
+                </ul>
+                <form role="search" class="d-flex" method="GET" action="/manageMembers">
+                    <input class="form-control me-2" type="search" name="input-value" placeholder="Search members" aria-label="Search"/>
+                    <button class="btn btn-outline-success" id="search" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="table-container">
+        <form action="" class="form-horizontal">
+            <h2>List of Members</h2>
+            <div class="panel-body">
+                <div class="row mb-4">
+                    <div class="col sm-12">
+                        <a href="" class="btn btn-success pull-right" data-bs-toggle="modal" data-bs-target="#addMemberModal">Add Member</a>
+                        <a href="" class="btn btn-danger pull-right" data-bs-toggle="modal" data-bs-target="#deleteMemberModal">Delete Member</a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Member Id</th>
+                        <th scope="col">Member Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone No.</th>
+                        <th scope="col">Membership Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for member in members %}
+                    <tr>
+                        <td>{{ member['member_id'] }}</td>
+                        <td>{{ member['member_name'] }}</td>
+                        <td>{{ member['email'] }}</td>
+                        <td>{{ member['phone_no'] }}</td>
+                        <td>{{ member['membership_date'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+    <div class="modal fade" id="addMemberModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Enter details of member to be added</h1>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="modal-form" id="addMemberForm">
+                        <div class="mb-3">
+                            <label for="addMemberName" class="form-label">Enter member name</label>
+                            <input type="text" class="form-control" id="addMemberName" name="addMemberName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="addMemberEmail" class="form-label">Enter member email</label>
+                            <input type="text" class="form-control" id="addMemberEmail" name="addMemberEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="addMemberPhoneNo" class="form-label">Enter member phone no.</label>
+                            <input type="text" class="form-control" id="addMemberPhoneNo" name="addMemberPhoneNo">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-success" type="button" id="add-member-save" data-bs-dismiss="modal">Add member</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteMemberModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Enter details of member to be deleted</h1>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="modal-form" id="deleteMemberForm">
+                        <div class="mb-3">
+                            <label for="deleteMemberId" class="form-label">Enter member Id</label>
+                            <input type="text" class="form-control" id="deleteMemberId" name="deleteMemberId">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deleteMemberName" class="form-label">Enter member name</label>
+                            <input type="text" class="form-control" id="deleteMemberName" name="deleteMemberName">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="delete-member-save" data-bs-dismiss="modal">Delete member</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/members.js"></script>
+</body>
+</html>
