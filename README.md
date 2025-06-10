@@ -9,6 +9,7 @@ Technologies used:-
 * Bootstrap CSS
 * jQuery
 * MySQL
+* JINJA Templating 
 
 ## Database schema
 The database 'library' has the following tables:-
