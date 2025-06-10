@@ -18,7 +18,20 @@ The database 'library' has the following tables:-
 * transactions(transaction_id, book_id, member_name, issue_date, due_date, return_date)
 
 ## User Interface
+### Homepage
 <img width=1437 alt='Screenshot 2025-06-10 232036' src='https://github.com/user-attachments/assets/f3676905-bebb-48dd-a6da-c0ce6774f793'>
+
+### Members
+![Screenshot 2025-06-10 235234](https://github.com/user-attachments/assets/56009b11-e98a-4e69-b14d-e6b0f94f6863)
+
+### Staff
+![Screenshot 2025-06-10 235458](https://github.com/user-attachments/assets/326a38d0-87a1-402f-a74f-07eb26f6e56d)
+
+
+### Transactions
+![Screenshot 2025-06-10 235607](https://github.com/user-attachments/assets/ca5274d5-619c-4666-855b-88c680f3a09f)
+
+
 
 <!--![Screenshot 2025-06-10 232036](https://github.com/user-attachments/assets/f3676905-bebb-48dd-a6da-c0ce6774f793)
 
