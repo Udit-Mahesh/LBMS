@@ -4,12 +4,12 @@ This project allows the admin to also update data in several tables by adding an
 Each page of this website has a specific search bar at the top-right corner to search for a particular record based on a particular value.
 
 Technologies used:-
-* Python Flask
-* HTML5
+* ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
-* MySQL
-* JINJA Templating 
+* ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+* ![Jinja](https://img.shields.io/badge/Jinja-B41717?style=for-the-badge&logo=jinja&logoColor=white)
 
 ## Database schema
 The database 'library' has the following tables:-
