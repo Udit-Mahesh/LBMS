@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     background-image: url('../images/LBMS.jpg');
     background-size:cover;
@@ -17,4 +18,25 @@ table{
 }
 th:hover,td:hover{
     background-color: rgb(238, 238, 238);
+=======
+body{
+    background-image: url('../images/LBMS.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+h2{
+    text-align:center;
+    backdrop-filter: blur(10px);
+    font-family: sans-serif;
+}
+table{
+    margin-left:10px;
+    margin-right: 100px;
+}
+.panel-body{
+    text-align:right;
+}
+th:hover,td:hover{
+    background-color: rgb(238, 238, 238);
+>>>>>>> 021fdf591c973b00f047735ae9a78bf0621bacba
 }

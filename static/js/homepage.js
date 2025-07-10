@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $('#add-book-save').click(()=>{
     let data=$('#addBookForm').serializeArray();
     let requestPayload={
@@ -17,3 +18,24 @@ $('#delete-book-save').click(()=>{
     callApi('POST','http://127.0.0.1:5000/deleteBook',JSON.stringify(requestPayload));
 });
 
+=======
+$('#add-book-save').click(()=>{
+    let data=$('#addBookForm').serializeArray();
+    let requestPayload={
+        book_name : data[0].value,
+        author : data[1].value,
+        publisher : data[2].value
+    };
+    callApi('POST','http://127.0.0.1:5000/addBook',JSON.stringify(requestPayload));
+});
+
+$('#delete-book-save').click(()=>{
+    let data=$('#deleteBookForm').serializeArray();
+    let requestPayload={
+        book_id:data[0].value,
+        book_name:data[1].value
+    };
+    callApi('POST','http://127.0.0.1:5000/deleteBook',JSON.stringify(requestPayload));
+});
+
+>>>>>>> 021fdf591c973b00f047735ae9a78bf0621bacba
